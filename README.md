@@ -20,10 +20,8 @@ By considering the similarity between the active user and other users, the propo
 
 ### Weighted Slope One Deviation
 The formula for the deviation between items \( j \) and \( i \) is defined as follows:
+<img width="689" alt="Screenshot 2024-10-09 at 2 45 11 PM" src="https://github.com/user-attachments/assets/075ffba3-4743-497f-8d6d-25c3d48dc64e">
 
-\[
-\text{dev}_{j,i} = \lambda \frac{\sum_{u \in S_{j,i}(\chi)} (u_j - u_i)}{\text{card}(S_{j,i}(\chi))} + (1 - \lambda) \frac{\sum_{u \in S_{j,i}(\chi)} ((u_j - u_i) \cdot \exp(\text{sim}(u, u')))}{\sum_{u \in S_{j,i}(\chi)} (\exp(\text{sim}(u, u')) \cdot \text{card}(S_{j,i}(\chi)))}
-\]
 
 Where:
 - \( \lambda \) is a pre-defined parameter between 0 and 1 that balances the influence of general and personalized ratings.
@@ -32,10 +30,7 @@ Where:
 
 ### Prediction for Personalized Weighted Slope One
 The predicted rating for item \( j \) by user \( u' \) is given by:
-
-\[
-P^{pwSl}(u')_j = \frac{\sum_{i \in S(u') - \{j\}} \left( (\text{dev}_{j,i} + u'_i) c_{j,i} \right)}{\sum_{i \in S(u') - \{j\}} c_{j,i}}
-\]
+<img width="366" alt="Screenshot 2024-10-09 at 2 45 45 PM" src="https://github.com/user-attachments/assets/08e11c5b-3892-477f-affa-0ce25afd1f49">
 
 Where:
 - \( S(u') \) is the set of items rated by user \( u' \), excluding item \( j \).
